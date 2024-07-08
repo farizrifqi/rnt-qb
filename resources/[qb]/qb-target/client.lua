@@ -116,7 +116,7 @@ local function RaycastCamera(flag, playerCoords)
 			local distance = playerCoords and #(playerCoords - endCoords)
 
 			if flag == 30 and entityHit then
-				entityHit = HasEntityClearLosToEntity(entityHit, playerPed, 7) and entityHit
+				entityHit = GetEntityPlayerIsFreeAimingAt(PlayerId(entityHit, playerPed, 7)) and entityHit
 			end
 
 			local entityType = entityHit and GetEntityType(entityHit)
@@ -177,7 +177,8 @@ exports('DisableTarget', DisableTarget)
 local function DrawOutlineEntity(entity, bool)
 	if not Config.EnableOutline or IsEntityAPed(entity) then return end
 	SetEntityDrawOutline(entity, bool)
-	SetEntityDrawOutlineColor(Config.OutlineColor[1], Config.OutlineColor[2], Config.OutlineColor[3], Config.OutlineColor[4])
+	SetEntityDrawOutlineColor(Config.OutlineColor[1], Config.OutlineColor[2], Config.OutlineColor[3],
+		Config.OutlineColor[4])
 end
 
 exports('DrawOutlineEntity', DrawOutlineEntity)
