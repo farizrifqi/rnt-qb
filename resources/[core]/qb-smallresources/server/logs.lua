@@ -1,10 +1,13 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 local Webhooks = {
-    ['default'] = '',
-    ['testwebhook'] = '',
+    ['default'] =
+    'https://discord.com/api/webhooks/1259731374001225779/7ZM5asmXv7y-V6skkYtXH3mvCpzLtF5W3fcLMT2UzWgyLn83nHizdlASzbUGCbW5Ny6o',
+    ['testwebhook'] =
+    'https://discord.com/api/webhooks/1259731374001225779/7ZM5asmXv7y-V6skkYtXH3mvCpzLtF5W3fcLMT2UzWgyLn83nHizdlASzbUGCbW5Ny6o',
     ['playermoney'] = '',
-    ['playerinventory'] = '',
+    ['playerinventory'] =
+    'https://discord.com/api/webhooks/1259731374001225779/7ZM5asmXv7y-V6skkYtXH3mvCpzLtF5W3fcLMT2UzWgyLn83nHizdlASzbUGCbW5Ny6o',
     ['robbing'] = '',
     ['cuffing'] = '',
     ['drop'] = '',
@@ -19,15 +22,19 @@ local Webhooks = {
     ['storerobbery'] = '',
     ['bankrobbery'] = '',
     ['powerplants'] = '',
-    ['death'] = '',
-    ['joinleave'] = '',
+    ['death'] =
+    'https://discord.com/api/webhooks/1259731374001225779/7ZM5asmXv7y-V6skkYtXH3mvCpzLtF5W3fcLMT2UzWgyLn83nHizdlASzbUGCbW5Ny6o',
+    ['joinleave'] =
+    'https://discord.com/api/webhooks/1259731374001225779/7ZM5asmXv7y-V6skkYtXH3mvCpzLtF5W3fcLMT2UzWgyLn83nHizdlASzbUGCbW5Ny6o',
     ['ooc'] = '',
     ['report'] = '',
-    ['me'] = '',
+    ['me'] =
+    'https://discord.com/api/webhooks/1259731374001225779/7ZM5asmXv7y-V6skkYtXH3mvCpzLtF5W3fcLMT2UzWgyLn83nHizdlASzbUGCbW5Ny6o',
     ['pmelding'] = '',
     ['112'] = '',
     ['bans'] = '',
-    ['anticheat'] = '',
+    ['anticheat'] =
+    'https://discord.com/api/webhooks/1259731374001225779/7ZM5asmXv7y-V6skkYtXH3mvCpzLtF5W3fcLMT2UzWgyLn83nHizdlASzbUGCbW5Ny6o',
     ['weather'] = '',
     ['moneysafes'] = '',
     ['bennys'] = '',
@@ -39,6 +46,8 @@ local Webhooks = {
     ['palert'] = '',
     ['house'] = '',
     ['qbjobs'] = '',
+    ['ps-adminmenu'] =
+    'https://discord.com/api/webhooks/1259731374001225779/7ZM5asmXv7y-V6skkYtXH3mvCpzLtF5W3fcLMT2UzWgyLn83nHizdlASzbUGCbW5Ny6o'
 }
 
 local colors = { -- https://www.spycolor.com/
@@ -76,7 +85,8 @@ RegisterNetEvent('qb-log:server:CreateLog', function(name, title, color, message
                 ['description'] = message,
                 ['author'] = {
                     ['name'] = 'QBCore Logs',
-                    ['icon_url'] = 'https://raw.githubusercontent.com/GhzGarage/qb-media-kit/main/Display%20Pictures/Logo%20-%20Display%20Picture%20-%20Stylized%20-%20Red.png',
+                    ['icon_url'] =
+                    'https://raw.githubusercontent.com/GhzGarage/qb-media-kit/main/Display%20Pictures/Logo%20-%20Display%20Picture%20-%20Stylized%20-%20Red.png',
                 },
                 ['image'] = imageUrl and imageUrl ~= '' and { ['url'] = imageUrl } or nil,
             }
@@ -92,7 +102,8 @@ RegisterNetEvent('qb-log:server:CreateLog', function(name, title, color, message
                 postData = { username = 'QB Logs', embeds = {} }
             end
             for i = 1, #logQueue[name] do postData.embeds[#postData.embeds + 1] = logQueue[name][i].data[1] end
-            PerformHttpRequest(logQueue[name][1].webhook, function() end, 'POST', json.encode(postData), { ['Content-Type'] = 'application/json' })
+            PerformHttpRequest(logQueue[name][1].webhook, function() end, 'POST', json.encode(postData),
+                { ['Content-Type'] = 'application/json' })
             logQueue[name] = {}
         end
     elseif Config.Logging == 'fivemanage' then
@@ -135,7 +146,8 @@ Citizen.CreateThread(function()
                     for i = 1, #queue do
                         postData.embeds[#postData.embeds + 1] = queue[i].data[1]
                     end
-                    PerformHttpRequest(queue[1].webhook, function() end, 'POST', json.encode(postData), { ['Content-Type'] = 'application/json' })
+                    PerformHttpRequest(queue[1].webhook, function() end, 'POST', json.encode(postData),
+                        { ['Content-Type'] = 'application/json' })
                     logQueue[name] = {}
                 end
             end
