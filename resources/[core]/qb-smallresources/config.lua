@@ -1,7 +1,9 @@
 Config = {}
 
-Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
-Config.PauseMapText = ''                                     -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
+Config.UseTarget = GetConvar('UseTarget', 'false') ==
+'true'                                                       -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
+Config.PauseMapText =
+''                                                           -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
 Config.HarnessUses = 20
 Config.DamageNeeded = 100.0                                  -- amount of damage till you can push your vehicle. 0-1000
 Config.Logging = 'discord'                                   -- fivemanage
@@ -80,14 +82,14 @@ Config.Density = {
 }
 
 Config.Disable = {
-    hudComponents = { 1, 2, 3, 4, 7, 9, 13, 14, 19, 20, 21, 22 }, -- Hud Components: https://docs.fivem.net/natives/?_0x6806C51AD12B83B8
-    controls = { 37 },                                            -- Controls: https://docs.fivem.net/docs/game-references/controls/
-    displayAmmo = true,                                           -- false disables ammo display
-    ambience = false,                                             -- disables distance sirens, distance car alarms, flight music, etc
-    idleCamera = true,                                            -- disables the idle cinematic camera
-    vestDrawable = false,                                         -- disables the vest equipped when using heavy armor
-    pistolWhipping = true,                                        -- disables pistol whipping
-    driveby = false,                                              -- disables driveby
+    hudComponents = { 1, 2, 3, 4, 7, 9, 13, 19, 20, 21, 22 }, -- Hud Components: https://docs.fivem.net/natives/?_0x6806C51AD12B83B8
+    controls = { 37 },                                        -- Controls: https://docs.fivem.net/docs/game-references/controls/
+    displayAmmo = true,                                       -- false disables ammo display
+    ambience = false,                                         -- disables distance sirens, distance car alarms, flight music, etc
+    idleCamera = true,                                        -- disables the idle cinematic camera
+    vestDrawable = false,                                     -- disables the vest equipped when using heavy armor
+    pistolWhipping = true,                                    -- disables pistol whipping
+    driveby = false,                                          -- disables driveby
 }
 
 Config.RelieveWeedStress = math.random(15, 20) -- stress relief amount (100 max)
